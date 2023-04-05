@@ -26,10 +26,17 @@ def Algoritmo_prim(w, n, s):
                         agregar_v = k # Actualizar el nodo a agregar al árbol mínimo
                         e = [j, k] # Actualizar el arco a agregar al árbol mínimo
                         minimo = w[j][k] # Actualizar el mínimo
-                        
+        
+        
         suma += w[e[0]][e[1]] # Sumar el peso del arco al total de la suma
         v[agregar_v] = 1 # Marcar el nodo k como visitado
         E.append(e) # Agregar el arco al árbol mínimo
+        print('\nCamino elegido:')
+        print(e)
+        print('Peso del camino:')
+        print((minimo))
+        print('Peso actual de ruta:')
+        print((suma))
     return [E, suma] # Retornar el árbol mínimo (lista de arcos) y la suma de los pesos
 
 n = 5 # Número de nodos en el grafo
@@ -44,7 +51,7 @@ w=[
       [4,   inf, inf, 1  , inf],  #con nodo E=4
       ]####-####-####-####-####-####-####-
 
-print("NOTA, El vertice 1 = vertice 0...:")
+#NOTA: El vertice 1 = vertice 0...
 resultado = Algoritmo_prim(w, n, s) # Llamar a la función de algoritmo de Prim
 print("El árbol es: ")
 print(resultado[0]) # Imprimir los arcos del árbol mínimo
